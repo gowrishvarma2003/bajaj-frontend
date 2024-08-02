@@ -16,7 +16,7 @@ export default function Home() {
     setError(null);
     try {
       const parsedData = JSON.parse(postData);
-      const response = await fetch('http://localhost:3000/api/data', {
+      const response = await fetch('bajaj-server-production.up.railway.app:2500/api/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export default function Home() {
   const handleGetRequest = async () => {
     setError(null);
     try {
-      const response = await fetch('http://localhost:3000/api/operation_code');
+      const response = await fetch('bajaj-server-production.up.railway.app:2500/api/operation_code');
       if (!response.ok) {
         const errorData = await response.json();
         setError(errorData.message);
